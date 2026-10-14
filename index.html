@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website Biodata Saya</title>
+
+    <style>
+        /* Mengatur tampilan dasar halaman */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #f0fdf4);
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        /* Bagian navigasi */
+        nav {
+            background: #0f766e;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav h2 {
+            font-size: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #a7f3d0;
+        }
+
+        /* Bagian utama */
+        .hero {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #0f766e;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Kartu biodata */
+        .card {
+            background: white;
+            max-width: 650px;
+            margin: 20px auto 50px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px #0f172a15;
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0f766e;
+        }
+
+        .biodata {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 16px;
+            line-height: 1.6;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        /* Tombol interaktif */
+        button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 24px;
+            background: #0f766e;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #115e59;
+        }
+
+        #pesan {
+            text-align: center;
+            margin-top: 18px;
+            color: #0f766e;
+            font-weight: bold;
+        }
+
+        /* Bagian bawah */
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #0f766e;
+            color: white;
+        }
+
+        /* Tampilan untuk HP */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .biodata {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .biodata .label:not(:first-child) {
+                margin-top: 10px;
+            }
+
+            .card {
+                margin: 20px 15px 35px;
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigasi website -->
+    <nav>
+        <h2>MyWebsite</h2>
+
+        <div>
+            <a href="#beranda">Beranda</a>
+            <a href="#biodata">Biodata</a>
+        </div>
+    </nav>
+
+    <!-- Halaman pembuka -->
+    <section class="hero" id="beranda">
+        <h1>Halo, Saya <span>Nama Kamu!</span></h1>
+
+        <p>
+            Selamat datang di website pribadi saya.
+            Ini adalah halaman sederhana untuk memperkenalkan
+            diri dan belajar membuat website menggunakan HTML,
+            CSS, dan JavaScript.
+        </p>
+    </section>
+
+    <!-- Informasi biodata -->
+    <section class="card" id="biodata">
+        <h2>Biodata Saya</h2>
+
+        <div class="biodata">
+            <div class="label">Nama</div>
+            <div>: Nama Lengkap Kamu</div>
+
+            <div class="label">Tempat, Tanggal Lahir</div>
+            <div>: Kota, 1 Januari 2008</div>
+
+            <div class="label">Pendidikan</div>
+            <div>: Nama Sekolah Kamu</div>
+
+            <div class="label">Hobi</div>
+            <div>: Membaca, bermain game, dan coding</div>
+
+            <div class="label">Cita-cita</div>
+            <div>: Menjadi programmer</div>
+        </div>
+
+        <button onclick="tampilkanPesan()">
+            Klik Saya!
+        </button>
+
+        <p id="pesan"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Website Biodata Saya. Dibuat dengan semangat belajar.</p>
+    </footer>
+
+    <script>
+        // Fungsi yang dijalankan saat tombol diklik
+        function tampilkanPesan() {
+            document.getElementById("pesan").textContent =
+                "Terima kasih sudah mengunjungi website saya! 😊";
+        }
+    </script>
+
+</body>
+</html>
