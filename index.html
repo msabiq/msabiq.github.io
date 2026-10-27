@@ -1,228 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Website Biodata Saya</title>
-
-    <style>
-        /* Mengatur tampilan dasar halaman */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #dbeafe, #f0fdf4);
-            color: #1e293b;
-            min-height: 100vh;
-        }
-
-        /* Bagian navigasi */
-        nav {
-            background: #0f766e;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        nav h2 {
-            font-size: 22px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        nav a:hover {
-            color: #a7f3d0;
-        }
-
-        /* Bagian utama */
-        .hero {
-            text-align: center;
-            padding: 70px 20px 40px;
-        }
-
-        .hero h1 {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #0f766e;
-        }
-
-        .hero p {
-            font-size: 17px;
-            line-height: 1.8;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        /* Kartu biodata */
-        .card {
-            background: white;
-            max-width: 650px;
-            margin: 20px auto 50px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px #0f172a15;
-        }
-
-        .card h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #0f766e;
-        }
-
-        .biodata {
-            display: grid;
-            grid-template-columns: 130px 1fr;
-            gap: 16px;
-            line-height: 1.6;
-        }
-
-        .label {
-            font-weight: bold;
-        }
-
-        /* Tombol interaktif */
-        button {
-            display: block;
-            margin: 25px auto 0;
-            padding: 12px 24px;
-            background: #0f766e;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        button:hover {
-            background: #115e59;
-        }
-
-        #pesan {
-            text-align: center;
-            margin-top: 18px;
-            color: #0f766e;
-            font-weight: bold;
-        }
-
-        /* Bagian bawah */
-        footer {
-            text-align: center;
-            padding: 22px;
-            background: #0f766e;
-            color: white;
-        }
-
-        /* Tampilan untuk HP */
-        @media (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav a {
-                margin: 0 7px;
-            }
-
-            .hero h1 {
-                font-size: 29px;
-            }
-
-            .biodata {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-
-            .biodata .label:not(:first-child) {
-                margin-top: 10px;
-            }
-
-            .card {
-                margin: 20px 15px 35px;
-                padding: 22px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SIMBINA SANTRI - Sistem Informasi Pembinaan dan Disiplin Santri">
+  <title>SIMBINA SANTRI | Roudlotul Musthofa</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Navigasi website -->
-    <nav>
-        <h2>MyWebsite</h2>
-
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">✦</div>
         <div>
-            <a href="#beranda">Beranda</a>
-            <a href="#biodata">Biodata</a>
+          <div class="brand-name">SIMBINA</div>
+          <div class="brand-subtitle">SANTRI</div>
         </div>
-    </nav>
+        <button class="icon-button close-sidebar" id="closeSidebar" aria-label="Tutup menu">×</button>
+      </div>
+      <div class="institution">
+        <div class="institution-label">SISTEM INFORMASI</div>
+        <div class="institution-name">Pondok Pesantren<br>Roudlotul Musthofa</div>
+      </div>
+      <nav class="navigation" aria-label="Navigasi utama">
+        <div class="nav-caption">MENU UTAMA</div>
+        <button class="nav-link active" data-page="dashboard"><span class="nav-icon">▦</span> Dashboard</button>
+        <button class="nav-link" data-page="santri"><span class="nav-icon">♙</span> Data Santri</button>
+        <button class="nav-link" data-page="pelanggaran"><span class="nav-icon">▤</span> Data Pelanggaran</button>
+        <button class="nav-link" data-page="pembinaan"><span class="nav-icon">♡</span> Pembinaan Santri</button>
+        <button class="nav-link" data-page="laporan"><span class="nav-icon">▥</span> Laporan</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-note"><span>●</span><div><strong>Data internal</strong><small>Gunakan dengan bijak dan rahasia.</small></div></div>
+        <div class="sidebar-footer">SIMBINA SANTRI <span>•</span> Versi tugas sekolah</div>
+      </div>
+    </aside>
 
-    <!-- Halaman pembuka -->
-    <section class="hero" id="beranda">
-        <h1>Halo, Saya <span>Nama Kamu!</span></h1>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
-        <p>
-            Selamat datang di website pribadi saya.
-            Ini adalah halaman sederhana untuk memperkenalkan
-            diri dan belajar membuat website menggunakan HTML,
-            CSS, dan JavaScript.
-        </p>
-    </section>
-
-    <!-- Informasi biodata -->
-    <section class="card" id="biodata">
-        <h2>Biodata Saya</h2>
-
-        <div class="biodata">
-            <div class="label">Nama</div>
-            <div>: Nama Lengkap Kamu</div>
-
-            <div class="label">Tempat, Tanggal Lahir</div>
-            <div>: Kota, 1 Januari 2008</div>
-
-            <div class="label">Pendidikan</div>
-            <div>: Nama Sekolah Kamu</div>
-
-            <div class="label">Hobi</div>
-            <div>: Membaca, bermain game, dan coding</div>
-
-            <div class="label">Cita-cita</div>
-            <div>: Menjadi programmer</div>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button menu-button" id="menuButton" aria-label="Buka menu">☰</button>
+          <div>
+            <div class="breadcrumb">SIMBINA SANTRI <span>/</span> <span id="breadcrumbCurrent">Dashboard</span></div>
+            <div class="topbar-heading" id="topbarHeading">Dashboard</div>
+          </div>
         </div>
+        <div class="topbar-right">
+          <span class="demo-pill"><span></span> Mode simulasi</span>
+          <div class="avatar" title="Administrator">A</div>
+        </div>
+      </header>
 
-        <button onclick="tampilkanPesan()">
-            Klik Saya!
-        </button>
+      <div class="content">
+        <section class="page active" id="page-dashboard">
+          <div class="welcome-banner">
+            <div class="welcome-copy">
+              <div class="eyebrow">PONDOK PESANTREN ROUDLOTUL MUSTHOFA</div>
+              <h1>Assalamu’alaikum, Pengurus <span>👋</span></h1>
+              <p>Kelola pencatatan kedisiplinan dan pembinaan santri dengan tertib, bijak, dan terarah.</p>
+              <button class="button button-light" data-go="pelanggaran">＋ Catat Pelanggaran</button>
+            </div>
+            <div class="welcome-decoration" aria-hidden="true"><div class="moon">☾</div><div class="dome"></div><div class="dome small"></div><div class="star star-one">✦</div><div class="star star-two">✧</div></div>
+          </div>
 
-        <p id="pesan"></p>
+          <div class="section-heading">
+            <div><h2>Ringkasan Data</h2><p>Ikhtisar data pada sistem saat ini.</p></div>
+            <span class="date-label" id="todayLabel"></span>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><div class="stat-icon green">♙</div><span class="stat-tag">Terdaftar</span></div><div class="stat-number" id="statSantri">0</div><div class="stat-title">Total Santri</div><div class="stat-foot">Data santri di sistem</div></article>
+            <article class="stat-card"><div class="stat-top"><div class="stat-icon amber">▤</div><span class="stat-tag amber-tag">Perlu perhatian</span></div><div class="stat-number" id="statPelanggaran">0</div><div class="stat-title">Catatan Pelanggaran</div><div class="stat-foot">Seluruh catatan tercatat</div></article>
+            <article class="stat-card"><div class="stat-top"><div class="stat-icon blue">♡</div><span class="stat-tag blue-tag">Berjalan</span></div><div class="stat-number" id="statAktif">0</div><div class="stat-title">Pembinaan Aktif</div><div class="stat-foot">Belum ditandai selesai</div></article>
+            <article class="stat-card"><div class="stat-top"><div class="stat-icon purple">✓</div><span class="stat-tag purple-tag">Tuntas</span></div><div class="stat-number" id="statSelesai">0</div><div class="stat-title">Pembinaan Selesai</div><div class="stat-foot">Sudah ditindaklanjuti</div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-heading"><div><h3>Catatan Pelanggaran Terbaru</h3><p>Catatan terakhir yang dimasukkan.</p></div><button class="text-button" data-go="pelanggaran">Lihat semua →</button></div>
+              <div class="table-wrap"><table><thead><tr><th>Santri</th><th>Jenis catatan</th><th>Tanggal</th><th>Status</th></tr></thead><tbody id="recentViolations"></tbody></table></div>
+              <div class="empty-state hidden" id="recentEmpty">Belum ada catatan pelanggaran.</div>
+            </section>
+            <section class="panel guidance-panel">
+              <div class="panel-heading"><div><h3>Prinsip Pembinaan</h3><p>Utamakan pendekatan mendidik.</p></div><div class="panel-symbol">✧</div></div>
+              <div class="principle"><span>01</span><div><strong>Adil dan objektif</strong><p>Catat kejadian berdasarkan informasi yang jelas.</p></div></div>
+              <div class="principle"><span>02</span><div><strong>Menjaga kerahasiaan</strong><p>Batasi akses data hanya untuk pihak berwenang.</p></div></div>
+              <div class="principle"><span>03</span><div><strong>Berorientasi pembinaan</strong><p>Dorong perbaikan, tanggung jawab, dan perilaku positif.</p></div></div>
+            </section>
+          </div>
+          <div class="notice"><span>ⓘ</span><div><strong>Catatan penggunaan</strong><p>Website ini merupakan contoh tugas sekolah. Gunakan data fiktif untuk latihan. Versi ini menyimpan data di browser yang digunakan dan belum memiliki login atau database online.</p></div></div>
+        </section>
+
+        <section class="page" id="page-santri">
+          <div class="page-intro"><div><div class="eyebrow dark-eyebrow">ADMINISTRASI SANTRI</div><h1>Data Santri</h1><p>Kelola identitas dasar santri untuk kebutuhan pencatatan internal.</p></div><button class="button button-primary" id="addSantriBtn">＋ Tambah Santri</button></div>
+          <div class="toolbar"><label class="search-box"><span>⌕</span><input type="search" id="searchSantri" placeholder="Cari nama atau nomor induk..."></label><span class="result-count" id="santriCount">0 data</span></div>
+          <section class="panel"><div class="table-wrap"><table><thead><tr><th>Nomor Induk</th><th>Nama Santri</th><th>Kelas</th><th>Kamar</th><th>Aksi</th></tr></thead><tbody id="santriTable"></tbody></table></div><div class="empty-state hidden" id="santriEmpty">Belum ada data santri. Klik “Tambah Santri” untuk memulai.</div></section>
+        </section>
+
+        <section class="page" id="page-pelanggaran">
+          <div class="page-intro"><div><div class="eyebrow dark-eyebrow">PENCATATAN KEDISIPLINAN</div><h1>Data Pelanggaran</h1><p>Catat kejadian secara faktual dan gunakan informasi untuk tindak lanjut yang mendidik.</p></div><button class="button button-primary" id="addViolationBtn">＋ Catat Pelanggaran</button></div>
+          <div class="toolbar"><label class="search-box"><span>⌕</span><input type="search" id="searchViolation" placeholder="Cari nama atau jenis pelanggaran..."></label><select class="select-control" id="filterViolationStatus" aria-label="Filter status"><option value="">Semua status</option><option value="Aktif">Perlu tindak lanjut</option><option value="Selesai">Ditindaklanjuti</option></select></div>
+          <section class="panel"><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Santri</th><th>Jenis catatan</th><th>Keterangan</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="violationTable"></tbody></table></div><div class="empty-state hidden" id="violationEmpty">Belum ada catatan pelanggaran.</div></section>
+        </section>
+
+        <section class="page" id="page-pembinaan">
+          <div class="page-intro"><div><div class="eyebrow dark-eyebrow">TINDAK LANJUT</div><h1>Pembinaan Santri</h1><p>Pantau rencana tindak lanjut dan perkembangan pembinaan santri.</p></div><button class="button button-primary" id="addGuidanceBtn">＋ Tambah Pembinaan</button></div>
+          <div class="toolbar"><label class="search-box"><span>⌕</span><input type="search" id="searchGuidance" placeholder="Cari nama santri atau pembinaan..."></label><select class="select-control" id="filterGuidanceStatus" aria-label="Filter status pembinaan"><option value="">Semua status</option><option value="Aktif">Berjalan</option><option value="Selesai">Selesai</option></select></div>
+          <div class="guidance-list" id="guidanceList"></div>
+          <div class="empty-state panel hidden" id="guidanceEmpty">Belum ada catatan pembinaan. Tambahkan pembinaan untuk memulai.</div>
+        </section>
+
+        <section class="page" id="page-laporan">
+          <div class="page-intro"><div><div class="eyebrow dark-eyebrow">REKAPITULASI</div><h1>Laporan</h1><p>Lihat ringkasan pencatatan dan cetak laporan untuk keperluan tugas.</p></div><button class="button button-primary" id="printReportBtn">⤓ Cetak / Simpan PDF</button></div>
+          <div class="report-summary">
+            <article class="report-card"><span>Total Santri</span><strong id="reportSantri">0</strong><small>Data terdaftar</small></article>
+            <article class="report-card"><span>Total Catatan</span><strong id="reportViolations">0</strong><small>Pelanggaran tercatat</small></article>
+            <article class="report-card"><span>Pembinaan Berjalan</span><strong id="reportActive">0</strong><small>Perlu pemantauan</small></article>
+            <article class="report-card"><span>Pembinaan Selesai</span><strong id="reportDone">0</strong><small>Telah ditindaklanjuti</small></article>
+          </div>
+          <section class="panel report-panel"><div class="panel-heading"><div><h3>Rekap Catatan Pelanggaran</h3><p>Data simulasi atau data yang kamu masukkan sendiri.</p></div><span class="report-stamp">SIMBINA SANTRI</span></div><div class="table-wrap"><table><thead><tr><th>Tanggal</th><th>Nomor Induk</th><th>Nama Santri</th><th>Jenis catatan</th><th>Status</th></tr></thead><tbody id="reportTable"></tbody></table></div><div class="empty-state hidden" id="reportEmpty">Belum ada data untuk dilaporkan.</div></section>
+          <div class="notice"><span>ⓘ</span><div><strong>Privasi laporan</strong><p>Periksa kembali laporan sebelum dibagikan. Jangan memajang data pribadi atau catatan kedisiplinan santri kepada publik.</p></div></div>
+        </section>
+      </div>
+      <footer class="main-footer"><span>© <span id="yearNow"></span> SIMBINA SANTRI</span><span>Dibuat untuk pembelajaran • Roudlotul Musthofa</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading"><div><div class="eyebrow dark-eyebrow">FORMULIR DATA</div><h2 id="modalTitle">Tambah data</h2></div><button class="icon-button" id="closeModal" aria-label="Tutup formulir">×</button></div>
+      <form id="dataForm">
+        <div id="formFields" class="form-grid"></div>
+        <div class="form-actions"><button type="button" class="button button-secondary" id="cancelModal">Batal</button><button type="submit" class="button button-primary">Simpan Data</button></div>
+      </form>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Website Biodata Saya. Dibuat dengan semangat belajar.</p>
-    </footer>
-
-    <script>
-        // Fungsi yang dijalankan saat tombol diklik
-        function tampilkanPesan() {
-            document.getElementById("pesan").textContent =
-                "Terima kasih sudah mengunjungi website saya! 😊";
-        }
-    </script>
-
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
 </body>
 </html>
